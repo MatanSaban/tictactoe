@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import bg from '@/public/tictactoebg.png'
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <main style={{ backgroundImage: `url(${bg.src})` }} className=" text-center text-black font-bold bg-sky-500/50">
+          <div className='bg-white bg-opacity-50 min-h-screen min-w-screen flex justify-center items-center relative'>
+            {children}
+          </div>
+        </main>
+      </body>
     </html>
   );
 }
